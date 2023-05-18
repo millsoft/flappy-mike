@@ -36,6 +36,13 @@ public class PipeSpawnScript : MonoBehaviour
     {
         float lowestPoint = transform.position.y - pipeRange;
         float highestPoint = transform.position.y + pipeRange;
-        Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint),0), transform.rotation);
+        GameObject newPipe = Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint),0), transform.rotation);
+        PipeMoveScript pipeMoveScript = newPipe.GetComponent<PipeMoveScript>();
+        if(pipeMoveScript != null)
+        {
+            pipeMoveScript.setMoveSpeed(4);
+        }
+
+
     }
 }

@@ -15,6 +15,11 @@ public class PipeMoveScript : MonoBehaviour
         
     }
 
+    public void setMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
+
     // Update is called once per frame
     void Update()
     {
